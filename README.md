@@ -63,7 +63,9 @@ npx sequelize db:seed:all
 touch .env
 ```
 新增後參考.env.example輸入資料
+
 <br />
+
 7. 啟動應用程式
 
 用這個指令來安裝nodemon
