@@ -22,10 +22,10 @@ git clone https:
 git clone https://github.com/Yuii24/LunchOrdering
 ```
 <br>
-2. 移動到檔案資料夾
+2. 開啟專案
 
 ```
-cd LunchOrdering
+code LunchOrdering
 ```
 <br>
 
