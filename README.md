@@ -9,7 +9,7 @@
 <li>使用者可以在訂單資訊的頁面看到本次訂單的訂購數、訂購人、說明、總金額與餐廳資料</li>
 <li>訂單的發起人和管理者可以關閉訂單也可以重新開啟</li>
 
-<h2>Environment requirements</h2>
+<h2>系統需求</h2>
 
 <li>Node.js v18</li>
 <li>MySQL server v8</li>
