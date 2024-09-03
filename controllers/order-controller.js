@@ -116,15 +116,19 @@ const orderController = {
 
     try {
       const [meals, order] = await Promise.all([
+        // 取得餐點資料
         Mealorder.findAll({
           where: {
             orderId
           },
-          // attributes: [
-          //   'meals',
-          //   'price',
-          // ],
-          // group: ['meals'],
+          attributes: [
+            'meals',
+            'price',
+            'quantity',
+            'mealtotal',
+            'name',
+            'description'
+          ],
           raw: true,
           nest: true
         }),
@@ -138,18 +142,18 @@ const orderController = {
 
       // 取得餐廳資料
       const Rest = order.Restaurant
-
+      // 計算總金額
       const total = meals.map(meal => meal.mealtotal).reduce((acc, price) => acc + price, 0)
-
+      // 將餐點內容組合成一個Object
       const mealsSummary = meals.reduce((acc, meal) => {
-        const mealType = meal.meals; // 假设 meals 字段表示餐点的种类
-        const quantity = meal.quantity; // 假设 quantity 字段表示每种餐点的数量
+        const mealType = meal.meals
+        const quantity = meal.quantity
         const price = meal.price
-        const mealPrice = meal.mealtotal; // 假设 mealtotal 表示餐点的总价
-        const name = meal.name;
-        const description = meal.description;
+        const mealPrice = meal.mealtotal
+        const name = meal.name
+        const description = meal.description
 
-        // 如果 accumulator 中还没有该餐点的种类，则初始化为 {quantity: 0, totalPrice: 0}
+        // 確認餐點Object是否存在，不存在就初始化
         if (!acc[mealType]) {
           acc[mealType] = {
             quantity: 0,
@@ -160,19 +164,19 @@ const orderController = {
           };
         }
 
-        // 累加当前餐点的数量和价格到对应的餐点种类上
-        acc[mealType].quantity += quantity;
-        acc[mealType].price = price;
-        acc[mealType].totalPrice += mealPrice;
+        // 累加餐點資料
+        acc[mealType].quantity += quantity
+        acc[mealType].price = price
+        acc[mealType].totalPrice += mealPrice
         for (let i = 0; i < quantity; i++) {
           acc[mealType].name.push(name)
         }
         if (description) {
-          acc[mealType].description.push({ name, description });
+          acc[mealType].description.push({ name, description })
         }
 
 
-        return acc;
+        return acc
       }, {});
       res.render('orderinfo', { mealsSummary, Rest, total, orderId, order })
     }
