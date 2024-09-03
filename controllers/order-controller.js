@@ -174,6 +174,8 @@ const orderController = {
       // 取得餐廳資料
       const Rest = order.Restaurant
 
+      console.log('mealsitemEachperson', mealsitemEachperson)
+
       res.render('orderinfo', { mealsitem, mealsitemEachperson, mealsdescription, Rest, totalprice, orderId, order })
     }
     catch (err) {
