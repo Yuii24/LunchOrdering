@@ -40,6 +40,7 @@ npm install
 4. 連結MySQL資料庫
 
 在config/config.json中設定資料庫<br />
+(可以自己建立一個資料庫並修改config/config.json設定，或是直接創建一個叫ordering的資料庫)<br />
 
 <br />
 
