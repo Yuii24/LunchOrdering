@@ -40,9 +40,9 @@ npm install
 4. 連結MySQL資料庫
 
   1.打開config.example
-  2.修改config.example上的內容，將username, password, database這三個欄位改成自己的資料
-                                                    (或是直接創建一個叫ordering的資料庫)
-  3.將config.example改成config.json
+  2.修改config.example上的內容，將username, password, database這三個欄位改成自己的資料<br />
+                                                    (或是直接創建一個叫ordering的資料庫)<br />
+  3.將config.example改成config.json<br />
 
 <br />
 
