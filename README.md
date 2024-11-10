@@ -3,7 +3,7 @@
 詳情資料頁面會將資料整理為簡明易讀的格式，便於管理和查看。
 <br>
 
-<img src="LunchOrdering.png" style="width: 300px; height: 200px;">
+<img src="LunchOrdering.png" style="width: 300px; height: 300px;">
 
 <h2>功能</h2>
 <li>由管理者來建立使用者帳號</li>
