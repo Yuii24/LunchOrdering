@@ -1,7 +1,9 @@
 <h1>午餐訂訂</h1>
 此程式讓使用者能夠自行新增餐廳，或是選擇已紀錄的餐廳開團，邀請他人共同訂餐。
 詳情資料頁面會將資料整理為簡明易讀的格式，便於管理和查看。
-<img src="LunchOrdering.png">
+<br>
+
+<img src="LunchOrdering.png" style="width: 300px; height: 200px;">
 
 <h2>功能</h2>
 <li>由管理者來建立使用者帳號</li>
