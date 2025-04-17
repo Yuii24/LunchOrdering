@@ -9,7 +9,7 @@ const methodOverride = require('method-override')
 const handlebarsHelpers = require('./helpers/handlebars-helpers')
 const { engine } = require('express-handlebars')
 const app = express()
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 3000
 
 const SESSION_SECRET = process.env.SESSION_SECRET
 

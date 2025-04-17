@@ -1,20 +1,36 @@
 version: '3.8'
 
-mysql:
-  image: mysql:8
-  container_name: mysql_db
-  restart: always
-  environment:
-    MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-    MYSQL_DATABASE: ${MYSQL_DATABASE}
-    MYSQL_USER: ${MYSQL_USERNAME}
-    MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-  ports:
-    - "4306:3306"
-  volumes:
-    - mysql_data:/var/lib/mysql
-  healthcheck:
-    test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
-    interval: 10s
-    timeout: 5s
-    retries: 3
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: Lunchorder
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      mysql:
+        condition: service_healthy
+    restart: always
+
+  mysql:
+    image: mysql:8
+    container_name: mysql_db
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "4306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  mysql_data:
+    driver: local
