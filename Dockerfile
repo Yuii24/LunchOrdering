@@ -30,7 +30,8 @@ COPY --from=development /app/migrations ./migrations
 COPY --from=development /app/seeders ./seeders
 
 # 複製 entrypoint 並給執行權限
-COPY --from=development /app/entrypoint.sh ./entrypoint.sh
+# COPY --from=development /app/entrypoint.sh ./entrypoint.sh
+COPY entrypoint.sh ./entrypoint.sh
 RUN chmod +x ./entrypoint.sh
 
 EXPOSE 3000
