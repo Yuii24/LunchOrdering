@@ -21,6 +21,7 @@ services:
     restart: always
     env_file:
       - .env
+    command: [ "--lower_case_table_names=1" ]
     ports:
       - "4306:3306"
     volumes:
