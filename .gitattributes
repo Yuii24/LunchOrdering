@@ -1,0 +1,5 @@
+# 針對 shell script，強制使用 LF（Unix 格式）
+*.sh text eol=lf
+
+# 針對所有檔案預設 LF（可視情況調整）
+* text=auto eol=lf
