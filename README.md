@@ -15,8 +15,7 @@
 
 <h2>系統需求</h2>
 
-<li>Node.js v18</li>
-<li>MySQL server v8</li>
+<li>Docker</li>
 
 <h2>安裝</h2>
 
@@ -33,34 +32,23 @@ code LunchOrdering
 ```
 <br>
 
-3. 安裝相關套件
+3. 複製.env
 
 ```
-npm install
+cp .env.example .env
 ```
+
+<br>
+
+4. 按照指示填入.env資料
 
 <br />
 
-4. 連結MySQL資料庫
+5. 使用Docekr啟動專案
 
-  1.打開config.example<br />
-  2.修改config.example上的內容，將username, password, database這三個欄位改成自己的資料<br />
-  (database的部分也可以直接創建一個叫ordering的資料庫)<br />
-  3.將config.example改成config.json<br />
-
-<br />
-
-5. 完成資料表與基礎資料的建置
-
-用這個指令來建立資料表
+用這個指令來運用Docker啟動專案
 ```
-npx sequelize db:migrate
-```
-
-用這個指令來建立管理者帳號資料
-(如果想變更管理者的帳號資料可以在執行前先到seeders資料夾的檔案中更改資料)
-```
-npx sequelize db:seed:all
+docker-compose up --build
 ```
 
 <br />
@@ -72,27 +60,3 @@ touch .env
 新增後參考.env.example輸入資料
 
 <br />
-
-7. 啟動應用程式
-
-用這個指令來安裝nodemon
-```
-npm install -g nodemon
-```
-並在packages.json檔案中的scripts中加入以下指令
-```
-"dev": "nodemon app.js"
-```
-
-用這個指令來啟動應用程式
-```
-npm run dev
-```
-
-or
-
-使用start來啟動
-
-```
-npm run start
-```
