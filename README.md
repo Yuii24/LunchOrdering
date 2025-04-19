@@ -50,13 +50,3 @@ cp .env.example .env
 ```
 docker-compose up --build
 ```
-
-<br />
-
-6. 新增.env檔案
-```
-touch .env
-```
-新增後參考.env.example輸入資料
-
-<br />
