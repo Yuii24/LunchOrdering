@@ -41,6 +41,7 @@ cp .env.example .env
 <br>
 
 4. 使用常用的文本編輯工具按照指示填入.env資料
+<br>
 Ex:
 ```
 vim .env
