@@ -25,10 +25,10 @@ git clone https:
 git clone https://github.com/Yuii24/LunchOrdering
 ```
 <br>
-2. 開啟專案
+2. 進入專案
 
 ```
-code LunchOrdering
+cd LunchOrdering
 ```
 <br>
 
@@ -40,7 +40,11 @@ cp .env.example .env
 
 <br>
 
-4. 按照指示填入.env資料
+4. 使用常用的文本編輯工具按照指示填入.env資料
+Ex:
+```
+vim .env
+```
 
 <br />
 
